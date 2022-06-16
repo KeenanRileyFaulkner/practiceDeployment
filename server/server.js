@@ -7,7 +7,11 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../index.html'));
+    res.sendFile(path.join(__dirname, '../client/index.html'));
+});
+
+app.get('/styles', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/index.css'))
 });
 
 const port = process.env.PORT || 4005; //4005 is to run server locally
